@@ -1,10 +1,12 @@
 package be.koencorp.bookApp;
 
+import javax.persistence.EntityManager;
 import java.util.List;
 import java.util.Optional;
 
 public interface BookDAO {
 
+    void setEntityManager(EntityManager entityManager);
     Optional<Book> get(long id);
 
     List<Book> getAll();

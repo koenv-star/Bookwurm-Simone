@@ -7,10 +7,11 @@ import javax.validation.constraints.Positive;
 import java.util.Date;
 
 @Entity
-@Table(name = "books")
+@Table(name = "Books")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+
 public class Book {
     @Id
     @Positive
@@ -22,8 +23,14 @@ public class Book {
     private String writer;
     @NonNull
     private Status status;
-    @NonNull
+
     private Date date;
+
+    public Book(String title, String writer, Status status) {
+        this.title=title;
+        this.writer=writer;
+        this.status=status;
+    }
 }
 
 @AllArgsConstructor
