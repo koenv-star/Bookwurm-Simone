@@ -5,6 +5,7 @@
       <configuration>
         <setting name="validation-enabled" value="true" />
         <datasource-mapping>
+          <factory-entry name="bookpu" value="cd078d1c-2d1f-49db-b266-56597c535639" />
           <factory-entry name="course" value="cd078d1c-2d1f-49db-b266-56597c535639" />
         </datasource-mapping>
         <naming-strategy-map />

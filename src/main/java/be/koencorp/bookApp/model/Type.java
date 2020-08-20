@@ -1,5 +1,5 @@
 package be.koencorp.bookApp.model;
 
 public enum Type {
-    ROMAN, THRILLER
+    ROMAN, THRILLER, FANTASY, DETECTIVE
 }

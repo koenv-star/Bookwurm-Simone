@@ -18,7 +18,7 @@ http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd">
             <property name="javax.persistence.jdbc.user" value="student" />
             <property name="javax.persistence.jdbc.password" value="student123" />
             -->
-            <!-- When table's are needed, this program will try to "create" it's table -->
+            <!-- When table's are needed, this program will try to "create" (value="create") or update (value="update") it's table -->
             <property name="javax.persistence.schema-generation.database.action" value="update"/>
             <!-- Hibernate specific, show sql-statements in the logs or not -->
             <property name="hibernate.show_sql" value="true"/>
