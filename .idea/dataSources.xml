@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
+    <data-source source="LOCAL" name="JavaDevT-Heverlee" uuid="cd078d1c-2d1f-49db-b266-56597c535639">
+      <driver-ref>mariadb</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.mariadb.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mariadb://javadev-training.be:3306/javadevt_Hever9</jdbc-url>
+    </data-source>
+  </component>
+</project>

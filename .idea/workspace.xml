@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="0f191a40-edf6-4e45-a3f0-147cc82fedd6" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1gM895S8G9P8c3Jf2bkZLvX3dH4" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mariadb" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\JAVA\Hibernate\Tasks\Boekenworm-Simone\BookWurm-Simone\src\main" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\JAVA\Hibernate\Tasks\Boekenworm-Simone\BookWurm-Simone" />
+    </key>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="0f191a40-edf6-4e45-a3f0-147cc82fedd6" name="Default Changelist" comment="" />
+      <created>1597912945844</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1597912945844</updated>
+      <workItem from="1597912948804" duration="2349000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="1985" y="181" key="#Assign_Data_Sources" timestamp="1597914074673">
+      <screen x="1366" y="-140" width="1440" height="860" />
+    </state>
+    <state x="1985" y="181" key="#Assign_Data_Sources/0.0.1366.728/1366.-140.1440.860@1366.-140.1440.860" timestamp="1597914074673" />
+    <state x="1678" y="-52" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1597913921240">
+      <screen x="1366" y="-140" width="1440" height="860" />
+    </state>
+    <state x="1678" y="-52" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728/1366.-140.1440.860@1366.-140.1440.860" timestamp="1597913921240" />
+    <state x="1566" y="-136" key="SettingsEditor" timestamp="1597913400873">
+      <screen x="1366" y="-140" width="1440" height="860" />
+    </state>
+    <state x="1566" y="-136" key="SettingsEditor/0.0.1366.728/1366.-140.1440.860@1366.-140.1440.860" timestamp="1597913400873" />
+  </component>
+</project>
