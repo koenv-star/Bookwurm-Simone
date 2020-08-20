@@ -20,10 +20,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0f191a40-edf6-4e45-a3f0-147cc82fedd6" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/be/koencorp/bookApp/dao/AbstractJpaDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/be/koencorp/bookApp/dao/BookJpaDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/be/koencorp/bookApp/dao/JpaDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/be/koencorp/bookApp/model/Type.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/cd078d1c-2d1f-49db-b266-56597c535639.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/cd078d1c-2d1f-49db-b266-56597c535639.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/be.koencorp/bookApp/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/be.koencorp/bookApp/Book.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/be.koencorp/bookApp/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/be/koencorp/bookApp/model/Book.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/be.koencorp/bookApp/BookApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/be.koencorp/bookApp/BookApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/be.koencorp/bookApp/BookDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/be.koencorp/bookApp/BookDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/be.koencorp/bookApp/BookDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/be/koencorp/bookApp/dao/BookDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/be.koencorp/bookApp/DAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/be/koencorp/bookApp/dao/DAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/orm.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/orm.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/META-INF/persistence.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/be/koencorp/bookApp/Book.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/be/koencorp/bookApp/BookApp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/be/koencorp/bookApp/BookApp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/be/koencorp/bookApp/BookDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/be/koencorp/bookApp/DAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/be/koencorp/bookApp/Status.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,6 +48,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Enum" />
         <option value="Interface" />
         <option value="Class" />
       </list>
@@ -74,7 +90,7 @@
       <module name="Bookwurm-Simone" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="be.koencorp.bookApp.*" />
+          <option name="PATTERN" value="be.koencorp.bookApp.model.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -98,7 +114,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1597912945844</updated>
-      <workItem from="1597912948804" duration="6326000" />
+      <workItem from="1597912948804" duration="7792000" />
+      <workItem from="1597923994182" duration="4653000" />
     </task>
     <servers />
   </component>
@@ -115,6 +132,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="1985" y="181" key="#Assign_Data_Sources" timestamp="1597914074673">
@@ -125,29 +143,38 @@
       <screen x="1366" y="-140" width="1440" height="860" />
     </state>
     <state x="1678" y="-52" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728/1366.-140.1440.860@1366.-140.1440.860" timestamp="1597913921240" />
-    <state x="1891" y="-4" key="#com.intellij.ide.util.MemberChooser" timestamp="1597916458987">
-      <screen x="1366" y="-140" width="1440" height="860" />
+    <state x="498" y="96" key="#com.intellij.ide.util.MemberChooser" timestamp="1597927725224">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="1891" y="-4" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728/1366.-140.1440.860@1366.-140.1440.860" timestamp="1597916458987" />
-    <state width="1397" height="702" key="GridCell.Tab.0.bottom" timestamp="1597920742447">
-      <screen x="1366" y="-140" width="1440" height="860" />
+    <state x="498" y="96" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1597927725224" />
+    <state width="1323" height="148" key="GridCell.Tab.0.bottom" timestamp="1597928684753">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1397" height="702" key="GridCell.Tab.0.bottom/0.0.1366.728/1366.-140.1440.860@1366.-140.1440.860" timestamp="1597920742447" />
-    <state width="1397" height="702" key="GridCell.Tab.0.center" timestamp="1597920742447">
-      <screen x="1366" y="-140" width="1440" height="860" />
+    <state width="1397" height="2" key="GridCell.Tab.0.bottom/0.0.1366.728/1366.-140.1440.860@1366.-140.1440.860" timestamp="1597922359850" />
+    <state width="1323" height="148" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1597928684753" />
+    <state width="1323" height="148" key="GridCell.Tab.0.center" timestamp="1597928684753">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1397" height="702" key="GridCell.Tab.0.center/0.0.1366.728/1366.-140.1440.860@1366.-140.1440.860" timestamp="1597920742447" />
-    <state width="1397" height="702" key="GridCell.Tab.0.left" timestamp="1597920742447">
-      <screen x="1366" y="-140" width="1440" height="860" />
+    <state width="1397" height="2" key="GridCell.Tab.0.center/0.0.1366.728/1366.-140.1440.860@1366.-140.1440.860" timestamp="1597922359850" />
+    <state width="1323" height="148" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1597928684753" />
+    <state width="1323" height="148" key="GridCell.Tab.0.left" timestamp="1597928684753">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1397" height="702" key="GridCell.Tab.0.left/0.0.1366.728/1366.-140.1440.860@1366.-140.1440.860" timestamp="1597920742447" />
-    <state width="1397" height="702" key="GridCell.Tab.0.right" timestamp="1597920742447">
-      <screen x="1366" y="-140" width="1440" height="860" />
+    <state width="1397" height="2" key="GridCell.Tab.0.left/0.0.1366.728/1366.-140.1440.860@1366.-140.1440.860" timestamp="1597922359850" />
+    <state width="1323" height="148" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1597928684753" />
+    <state width="1323" height="148" key="GridCell.Tab.0.right" timestamp="1597928684753">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1397" height="702" key="GridCell.Tab.0.right/0.0.1366.728/1366.-140.1440.860@1366.-140.1440.860" timestamp="1597920742447" />
+    <state width="1397" height="2" key="GridCell.Tab.0.right/0.0.1366.728/1366.-140.1440.860@1366.-140.1440.860" timestamp="1597922359850" />
+    <state width="1323" height="148" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1597928684753" />
     <state x="1566" y="-136" key="SettingsEditor" timestamp="1597913400873">
       <screen x="1366" y="-140" width="1440" height="860" />
     </state>
     <state x="1566" y="-136" key="SettingsEditor/0.0.1366.728/1366.-140.1440.860@1366.-140.1440.860" timestamp="1597913400873" />
+    <state x="577" y="251" width="316" height="244" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1597924180859">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="577" y="251" width="316" height="244" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1/0.0.1366.728@0.0.1366.728" timestamp="1597924180859" />
   </component>
 </project>
