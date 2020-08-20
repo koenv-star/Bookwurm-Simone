@@ -19,6 +19,8 @@ public class Book {
     @NonNull
     private String title;
     @NonNull
+    private String writer;
+    @NonNull
     private Status status;
     @NonNull
     private Date date;
