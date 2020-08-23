@@ -35,9 +35,9 @@ public final class ConsolePrintTool {
     }
 
     public static void printHeading() {
-        System.out.println(ANSI_YELLOW + String.format("%10s |%9s|%8s|%10s|%6s",
-                "Name", "#Guesses", "#Played", "Playtime", "Level") + ANSI_RESET);
-        System.out.println("--------------------------------------------------");
+        System.out.println(ANSI_YELLOW + String.format("%15s |%20s|%14s|%10s|%10s|%5s",
+                "Title", "Author", "ISBN", "Revision", "Type", "Fiction") + ANSI_RESET);
+        System.out.println("----------------------------------------------------------------------------------------------------");
     }
 
     public static void printEnter() {

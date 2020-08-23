@@ -2,10 +2,16 @@ package be.koencorp.bookApp;
 
 
 import be.koencorp.bookApp.dao.BookJpaDao;
+import be.koencorp.bookApp.model.Book;
+import be.koencorp.bookApp.model.Type;
 import be.koencorp.bookApp.tools.ConsoleInputTool;
 import be.koencorp.bookApp.tools.ConsolePrintTool;
 
 import javax.persistence.Persistence;
+
+import java.time.LocalDate;
+
+import static be.koencorp.bookApp.tools.ConsolePrintTool.printHeading;
 
 
 public class BookApp {
@@ -45,25 +51,39 @@ public class BookApp {
     public void startMenu() {
         int choice;
         do {
-            System.out.println("Hello " + ConsolePrintTool.ANSI_YELLOW + "Simone" + ConsolePrintTool.ANSI_RESET + "!" + " Hope you are having a good day! Welcome to the BookApp starting menu, " +
-                    "please choose one of the following options: ");
+            System.out.println("Hello " + ConsolePrintTool.ANSI_YELLOW + "Simone" + ConsolePrintTool.ANSI_RESET + "!" + " Hope you are having a good day! Welcome to the BookApp starting menu. " +
+                    "Please choose one of the following options: ");
 
             printMenu();
 
-            choice = consoleInput.askUserPosIntBetweenRange("Input a number between 1 and 5", 1, 5);
+            choice = consoleInput.askUserPosIntBetweenRange("Input a number between 1 and 5.", 1, 5);
 
             if (choice == 1) {
 
-                bookJpaDao.findAllOrderByTitle().stream().forEach(System.out::println);
+                printHeading();
+                bookJpaDao.findAllOrderByTitle().forEach(System.out::println);
 
                 ConsolePrintTool.printEnter();
 
             }
 
             if (choice == 2) {
-
+                printHeading();
+                bookJpaDao.findAllReadOrderedByDate().forEach(System.out::println);
+                ConsolePrintTool.printEnter();
             }
             if (choice == 3) {
+                String title = consoleInput.askUserBooktitle("Book title: ");
+                String author = consoleInput.AskUserAuthor("Author: ");
+                String isbn = consoleInput.AskUserIsbn("ISBN: ");
+                String revision = consoleInput.AskUserRevision("Revision: ");
+                boolean fiction = consoleInput.askIsFiction("Is the book Fiction (yes/no)?");
+                Type type = consoleInput.askUserBookType("Type of the book: ");
+
+                Book book = new Book(title, author, isbn, revision,
+                        type, fiction, null);
+
+                bookJpaDao.create(book);
 
                 ConsolePrintTool.printEnter();
             }

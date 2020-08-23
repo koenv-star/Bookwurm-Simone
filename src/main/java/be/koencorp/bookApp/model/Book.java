@@ -1,7 +1,6 @@
 package be.koencorp.bookApp.model;
 
 import javax.persistence.*;
-import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.util.UUID;
 
@@ -11,17 +10,7 @@ public class Book {
     public Book() {
     }
 
-    /*
-     * @Colums: geeft veld weer in database. Heeft veel opties e.g Nullable (geeft weer of null mag zijn) enz.
-     * Deze annotatie heeft nog heel wat andere mogelijkheden.
-     *
-     * UUID, primary key is altijd uniek. 32 bit gegenerereerde sleutel. Handig want moeilijk te hakken!
-     * toestencombo's ctr o (control organize imports !).
-     * Conventies: packages altijd met kleine letters ! variabelen nooit -. Naam velden tabel ook kleine letters en scheiding met underscore!
-     * Validatie hier niet gedaan moet in app gezet worden !
-     *
-     *
-     */
+
     @Id
     @Column(name = "id", updatable = false)
     private UUID id = UUID.randomUUID();
@@ -127,8 +116,8 @@ public class Book {
     @Override
     public String toString() {
 
-        return String.format("%10s |%20s|%14s|%5s|%15s|%15s",
-                title, author, isbn, revision, type, fiction );
+        return String.format("%15s |%20s|%14s|%7s|%10s|%5s",
+                title, author, isbn, revision, type, fiction);
     }
 
 

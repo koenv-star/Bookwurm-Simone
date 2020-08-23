@@ -1,9 +1,14 @@
 package be.koencorp.bookApp.tools;
 
+import be.koencorp.bookApp.model.Type;
+
 import java.util.Scanner;
+
+import static be.koencorp.bookApp.model.Type.*;
 
 /**
  * Class for handling the inputs
+ *
  * @author Ward edited By Team-A
  */
 public final class ConsoleInputTool {
@@ -25,6 +30,7 @@ public final class ConsoleInputTool {
 
     /**
      * Method for asking yes or no question with a string
+     *
      * @param message is a string that you are asking to user for yes no question
      * @return is the answer of the user in type of boolean true or false
      */
@@ -43,9 +49,10 @@ public final class ConsoleInputTool {
 
     /**
      * Method for asking user to enter between 2 boundary
+     *
      * @param message is your question in type of string
-     * @param low is your lowest boundary for user's answer can give
-     * @param high is your highest boundary for user's answer can give
+     * @param low     is your lowest boundary for user's answer can give
+     * @param high    is your highest boundary for user's answer can give
      * @return the answer of the user if all in order in type of int
      */
     public int askUserPosIntBetweenRange(String message, int low, int high) {
@@ -66,9 +73,10 @@ public final class ConsoleInputTool {
 
     /**
      * Method for asking to user that a specific amount of digits entered between the given range
-     * @param message your question to user
-     * @param length user's answer's length need to be
-     * @param lowDigit lowest bundary
+     *
+     * @param message   your question to user
+     * @param length    user's answer's length need to be
+     * @param lowDigit  lowest bundary
      * @param highDigit highest boundary
      * @return is the answer if all in order in type of String
      */
@@ -94,6 +102,7 @@ public final class ConsoleInputTool {
 
     /**
      * Checking the input if there is duplicate numbers inputted
+     *
      * @param input is the sting type of input by the user
      * @return true false according to comparing all numbers in input
      */
@@ -116,6 +125,7 @@ public final class ConsoleInputTool {
 
     /**
      * Asking user for enter a name
+     *
      * @param message is question for username
      * @return in string type the user's answer as username
      */
@@ -135,4 +145,89 @@ public final class ConsoleInputTool {
 
         return input.substring(0, 1).toUpperCase() + input.substring(1).toLowerCase();
     }
+
+    public boolean askIsFiction(String s) {
+        if (s == null || s.length() < 1) return false;
+        System.out.println(s);
+        String answer;
+        do {
+            answer = scanner.nextLine().toLowerCase().trim();
+            System.out.println(answer);
+            System.out.println(answer.equals("yes"));
+            if (!answer.equals("yes") && !answer.equals("no")) System.err.println("Type in yes or no");
+        } while (!answer.equals("yes") && !answer.equals("no"));
+
+        return answer.equals("yes");
+    }
+
+    public Type askUserBookType(String s) {
+        System.out.println(s);
+        String answer = scanner.nextLine().toUpperCase();
+        Type type = null;
+        do {
+            switch (answer) {
+
+                case "ROMAN":
+                    type = ROMAN;
+                    break;
+                case "THRILLER":
+                    type = THRILLER;
+                    break;
+                case "FANTASY":
+                    type = FANTASY;
+                    break;
+                case "DETECTIVE":
+                    type = DETECTIVE;
+                    break;
+                default:
+                    System.err.println("Choose a valid type: Roman, Thriller, Detective, Fantasy");
+            }
+        } while (type == null);
+        return type;
+
+    }
+
+    public String askUserBooktitle(String s) {
+
+        return askUserName(s);
+    }
+
+    public String AskUserAuthor(String author) {
+
+        return askUserName(author);
+    }
+
+    public String AskUserIsbn(String s) {
+        String regex = "\\d{1,13}";
+
+        String input;
+
+        do {
+            System.out.println(s);
+            input = scanner.nextLine();
+            if (!input.matches(regex)) {
+                System.err.println("Insert a valid ISBN nr! ");
+            }
+        } while (!input.matches(regex));
+
+        return input;
+    }
+
+    public String AskUserRevision(String s) {
+        String regex = "\\d{1,4}";
+
+        String input;
+
+        do {
+            System.out.println(s);
+            input = scanner.nextLine();
+            if (!input.matches(regex)) {
+                System.err.println("Insert a valid ISBN nr! ");
+            }
+        } while (!input.matches(regex));
+
+        return input;
+    }
 }
+
+

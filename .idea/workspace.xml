@@ -20,21 +20,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0f191a40-edf6-4e45-a3f0-147cc82fedd6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/be/koencorp/bookApp/BookApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Bookwurm-Simone.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Bookwurm-Simone.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/be.koencorp/bookApp/BookApp.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/be/koencorp/bookApp/dao/BookJpaDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/be/koencorp/bookApp/dao/BookJpaDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/be/koencorp/bookApp/dao/JpaDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/be/koencorp/bookApp/dao/JpaDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/be/koencorp/bookApp/BookApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/be/koencorp/bookApp/BookApp.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/be/koencorp/bookApp/model/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/be/koencorp/bookApp/model/Book.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/be/koencorp/bookApp/model/Type.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/be/koencorp/bookApp/model/Type.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/META-INF/persistence.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/be/koencorp/bookApp/tools/ConsoleInputTool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/be/koencorp/bookApp/tools/ConsoleInputTool.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/be/koencorp/bookApp/tools/ConsolePrintTool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/be/koencorp/bookApp/tools/ConsolePrintTool.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/be/koencorp/bookApp/BookApp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/be/koencorp/bookApp/BookApp.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/be/koencorp/bookApp/dao/BookJpaDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/be/koencorp/bookApp/dao/BookJpaDao.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/be/koencorp/bookApp/model/Book.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/be/koencorp/bookApp/model/Book.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/be/koencorp/bookApp/model/Type.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/be/koencorp/bookApp/model/Type.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/be/koencorp/bookApp/tools/ConsoleInputTool.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/be/koencorp/bookApp/tools/ConsoleInputTool.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/be/koencorp/bookApp/tools/ConsolePrintTool.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/be/koencorp/bookApp/tools/ConsolePrintTool.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -117,7 +111,9 @@
       <updated>1597912945844</updated>
       <workItem from="1597912948804" duration="7792000" />
       <workItem from="1597923994182" duration="4653000" />
-      <workItem from="1597941807650" duration="7139000" />
+      <workItem from="1597941807650" duration="7250000" />
+      <workItem from="1598106009602" duration="595000" />
+      <workItem from="1598164664001" duration="7630000" />
     </task>
     <servers />
   </component>
@@ -146,40 +142,48 @@
       <screen x="1366" y="-140" width="1440" height="860" />
     </state>
     <state x="1678" y="-52" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728/1366.-140.1440.860@1366.-140.1440.860" timestamp="1597913921240" />
-    <state x="498" y="96" key="#com.intellij.ide.util.MemberChooser" timestamp="1597950001039">
+    <state x="498" y="96" key="#com.intellij.ide.util.MemberChooser" timestamp="1598174786651">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="1891" y="-4" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728/1366.-140.1440.860@1366.-140.1440.860" timestamp="1597916458987" />
-    <state x="498" y="96" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1597950001039" />
+    <state x="498" y="96" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1598174786651" />
     <state x="466" y="258" width="433" height="217" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1597946407535">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="466" y="258" width="433" height="217" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1366.728@0.0.1366.728" timestamp="1597946407535" />
-    <state width="1323" height="332" key="GridCell.Tab.0.bottom" timestamp="1597950773899">
+    <state x="463" y="65" key="FileChooserDialogImpl" timestamp="1598165272848">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="463" y="65" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1598165272848" />
+    <state width="1323" height="387" key="GridCell.Tab.0.bottom" timestamp="1598176533356">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="1397" height="2" key="GridCell.Tab.0.bottom/0.0.1366.728/1366.-140.1440.860@1366.-140.1440.860" timestamp="1597922359850" />
-    <state width="1323" height="332" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1597950773899" />
-    <state width="1323" height="332" key="GridCell.Tab.0.center" timestamp="1597950773899">
+    <state width="1323" height="387" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1598176533356" />
+    <state width="1323" height="387" key="GridCell.Tab.0.center" timestamp="1598176533356">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="1397" height="2" key="GridCell.Tab.0.center/0.0.1366.728/1366.-140.1440.860@1366.-140.1440.860" timestamp="1597922359850" />
-    <state width="1323" height="332" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1597950773899" />
-    <state width="1323" height="332" key="GridCell.Tab.0.left" timestamp="1597950773899">
+    <state width="1323" height="387" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1598176533356" />
+    <state width="1323" height="387" key="GridCell.Tab.0.left" timestamp="1598176533356">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="1397" height="2" key="GridCell.Tab.0.left/0.0.1366.728/1366.-140.1440.860@1366.-140.1440.860" timestamp="1597922359850" />
-    <state width="1323" height="332" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1597950773899" />
-    <state width="1323" height="332" key="GridCell.Tab.0.right" timestamp="1597950773899">
+    <state width="1323" height="387" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1598176533356" />
+    <state width="1323" height="387" key="GridCell.Tab.0.right" timestamp="1598176533356">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="1397" height="2" key="GridCell.Tab.0.right/0.0.1366.728/1366.-140.1440.860@1366.-140.1440.860" timestamp="1597922359850" />
-    <state width="1323" height="332" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1597950773899" />
-    <state x="190" y="3" key="SettingsEditor" timestamp="1597949867774">
+    <state width="1323" height="387" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1598176533356" />
+    <state x="348" y="68" key="NewModule_or_Project.wizard" timestamp="1598165277118">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="348" y="68" key="NewModule_or_Project.wizard/0.0.1366.728@0.0.1366.728" timestamp="1598165277118" />
+    <state x="190" y="3" key="SettingsEditor" timestamp="1598166134808">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="1566" y="-136" key="SettingsEditor/0.0.1366.728/1366.-140.1440.860@1366.-140.1440.860" timestamp="1597913400873" />
-    <state x="190" y="3" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1597949867774" />
+    <state x="190" y="3" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1598166134808" />
     <state x="577" y="251" width="316" height="244" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1597924180859">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
