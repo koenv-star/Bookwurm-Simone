@@ -1,233 +1,190 @@
 package be.koencorp.bookApp.tools;
 
-import be.koencorp.bookApp.model.Type;
-
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
-import static be.koencorp.bookApp.model.Type.*;
-
 /**
- * Class for handling the inputs
+ * ConsoleInputTool
+ * A Utility class to get input from the user using the console
  *
- * @author Ward edited By Team-A
+ * @version 2.3.0 , 12-may-2020
  */
 public final class ConsoleInputTool {
-    Scanner scanner = new Scanner(System.in);
+   Scanner keyboard = new Scanner(System.in);
 
-    /**
-     * Constructor without parameters
-     */
-    public ConsoleInputTool() {
-    }
+   /**
+    * Initializes a new ConsoleInputTool object, connected with System.in
+    */
+   public ConsoleInputTool() {
+   }
 
-    /**
-     * Asking for the enter if the user wants to continue
-     */
-    public void askPressEnterToContinue() {
-        System.out.print("Press enter to continue.");
-        scanner.nextLine();
-    }
+   /**
+    * Requests the user to press the return key to continue.
+    */
+   public void askPressEnterToContinue() {
+      System.out.print("Press enter to continue.");
+      keyboard.nextLine();
+   }
 
-    /**
-     * Method for asking yes or no question with a string
-     *
-     * @param message is a string that you are asking to user for yes no question
-     * @return is the answer of the user in type of boolean true or false
-     */
-    public boolean askYesOrNo(String message) {
-        if (message == null || message.length() < 1) return false;
-        System.out.println(message);
-        String answer;
-        do {
-            answer = scanner.nextLine().toLowerCase();
-            if (answer.length() > 1) System.err.println("Answer cannot be longer than 1 char");
-            if (!answer.equals("y") && !answer.equals("n")) System.err.println("Type in y or n");
-        } while (!answer.equals("y") && !answer.equals("n"));
+   /**
+    * Ask the user for a boolean(may repeat until input is correct).
+    * when the use leaves the input blank the default value will be used if allowed.
+    *
+    * @param question          The question to ask(print to) the user.
+    * @param allowBlankDefault whether the user is allowed to input a blank line, use default value.
+    * @param defaultValue      The default value to use if the user inputs a blank line.
+    * @return the user input: string.
+    */
+   public boolean askUserYesNoQuestion(String question, boolean allowBlankDefault, boolean defaultValue) {
+      do {
+         System.out.print(question);
+         String answer = keyboard.nextLine();
+         answer = answer.toLowerCase();
+         if (answer.equals("y") || answer.equals("yes") || answer.equals("j") || answer.equals("ja")) return true;
+         else if (answer.equals("n") || answer.equals("no") || answer.equals("nee")) return false;
+         else if (allowBlankDefault && answer.isBlank()) return defaultValue;
+         System.err.println("Error: input must be y or n.");
+      } while (true);
+   }
 
-        return answer.equals("y");
-    }
+   /**
+    * Ask the user for a boolean(repeat until input is correct).
+    *
+    * @param question The question to ask(print to) the user.
+    * @return the user input: string.
+    */
+   public boolean askUserYesNoQuestion(String question) {
+      return askUserYesNoQuestion(question, false, false);
+   }
 
-    /**
-     * Method for asking user to enter between 2 boundary
-     *
-     * @param message is your question in type of string
-     * @param low     is your lowest boundary for user's answer can give
-     * @param high    is your highest boundary for user's answer can give
-     * @return the answer of the user if all in order in type of int
-     */
-    public int askUserPosIntBetweenRange(String message, int low, int high) {
-        if (low < 0) throw new IllegalArgumentException("low cannot be negative");
-        if (low > high) throw new IllegalArgumentException("The lower end cannot be greater than the higher end");
-        if (message == null) throw new IllegalArgumentException("The message cannot be null");
+   /**
+    * Ask the user for a boolean(repeat until input is correct).
+    * when the use leaves the input blank the default value will be used.
+    *
+    * @param question     The question to ask(print to) the user.
+    * @param defaultValue The default value to use if the user inputs a blank line.
+    * @return the user input: string.
+    */
+   public boolean askUserYesNoQuestion(String question, boolean defaultValue) {
+      return askUserYesNoQuestion(question, true, defaultValue);
+   }
 
-        String input;
-        do {
-            System.out.println(message);
-            input = scanner.nextLine();
-            if (!input.matches("[" + low + "-" + high + "]"))
-                System.err.println("Input must be a number between " + low + " and " + high);
-        } while (!input.matches("[" + low + "-" + high + "]"));
+   /**
+    * Ask the user for a String(repeat until input is correct).
+    *
+    * @param question          the question to ask(print to) the user.
+    * @param minimumCharacters the minimum length of String to return.
+    * @return the user input: string.
+    */
+   public String askUserString(String question, int minimumCharacters) {
+      if (minimumCharacters <= 0) {
+         System.out.print(question);
+         return keyboard.nextLine();
+      } else {
+         String input;
+         do {
+            System.out.print(question);
+            input = keyboard.nextLine();
+            if (input.length() < minimumCharacters)
+               System.err.format("Error: Input must be at least %d character%s.\n", minimumCharacters, minimumCharacters > 1 ? "s" : "");
+         } while (input.length() < minimumCharacters);
+         return input;
+      }
+   }
 
-        return Integer.parseInt(input);
-    }
 
-    /**
-     * Method for asking to user that a specific amount of digits entered between the given range
-     *
-     * @param message   your question to user
-     * @param length    user's answer's length need to be
-     * @param lowDigit  lowest bundary
-     * @param highDigit highest boundary
-     * @return is the answer if all in order in type of String
-     */
-    public String askSpecificAmountOfPosDigitsStringBetweenRange(String message, int length, int lowDigit, int highDigit) {
-        if (length < 1 || highDigit < lowDigit || lowDigit < 0 || lowDigit > 9 || highDigit > 9) {
-            return null;
-        }
+   /**
+    * Ask the user for a String(repeat until input is correct).
+    *
+    * @param question          the question to ask(print to) the user.
+    * @param minimumCharacters the minimum length of String to return.
+    * @param maximumCharacters the maximum length of String to return.
+    * @return the user input: string.
+    */
+   public String askUserString(String question, int minimumCharacters, int maximumCharacters) {
+      String input;
+      do {
+         System.out.print(question);
+         input = keyboard.nextLine();
+         if (input.length() < minimumCharacters)
+            System.err.format("Error: Input must be at least %d character%s.\n", minimumCharacters, minimumCharacters > 1 ? "s" : "");
+         if (input.length() > maximumCharacters)
+            System.err.format("Error: Input must be at most %d character%s.\n", maximumCharacters, minimumCharacters > 1 ? "s" : "");
+      } while (input.length() < minimumCharacters || input.length() > maximumCharacters);
+      return input;
+   }
 
-        String regex = "[" + lowDigit + "-" + highDigit + "]{" + length + "}";
+   /**
+    * Ask the user for a String(repeat until input is correct).
+    *
+    * @param question the question to ask(print to) the user.
+    * @return the user input: string.
+    */
+   public String askUserString(String question) {
+      return askUserString(question, 0);
+   }
 
-        String input;
 
-        do {
-            System.out.println(message);
-            input = scanner.nextLine();
-            if (!input.matches(regex)) {
-                System.err.println("Type in exactly " + length + " digits between " + lowDigit + " and " + highDigit);
-            }
-        } while (!input.matches(regex));
+   /**
+    * Ask the user for a integer(repeat until input is correct).
+    *
+    * @param question the question to ask(print to) the user.
+    * @return the user input: integer.
+    */
+   public int askUserInteger(String question) {
+      int input;
+      while (true) {
+         try {
+            System.out.print(question);
+            input = keyboard.nextInt();
+            break;
+         } catch (InputMismatchException ime) {
+            System.err.println("Error: input is not a number");
+         } finally {
+            keyboard.nextLine();
+         }
+      }
+      return input;
+   }
 
-        return input;
-    }
+   /**
+    * Ask the user for a integer(repeat until input is correct).
+    *
+    * @param question the question to ask(print to) the user.
+    * @param minimum  the minimum the integer is allowed to be.
+    * @return the user input: integer.
+    */
+   public int askUserInteger(String question, int minimum) {
+      int input;// = minimum - 1;
+      do {
+         input = askUserInteger(question);
+         if (input < minimum) {
+            System.err.println("Error: input must be equal or higher than " + minimum);
+         }
+      } while (input < minimum);
+      return input;
+   }
 
-    /**
-     * Checking the input if there is duplicate numbers inputted
-     *
-     * @param input is the sting type of input by the user
-     * @return true false according to comparing all numbers in input
-     */
-    public boolean checkNoDoublesInString(String input) {
-        if (input == null || input.length() < 1) return false;
+   /**
+    * Ask the user for a integer(repeat until input is correct).
+    *
+    * @param question the question to ask(print to) the user.
+    * @param minimum  the minimum the integer is allowed to be.
+    * @param maximum  the maximum the integer is allowed to be.
+    * @return the user input: integer.
+    */
+   public int askUserInteger(String question, int minimum, int maximum) {
+      int input;// = 0;
+      do {
+         input = askUserInteger(question);
+         if (input < minimum) {
+            System.err.println("Error: input must be equal or higher than " + minimum);
+         } else if (input > maximum) {
+            System.err.println("Error: input must be equal or lower than " + maximum);
+         }
+      } while (input < minimum || input > maximum);
+      return input;
+   }
 
-        for (int i = 0; i < input.length(); i++) {
-            for (int j = 0; j < input.length(); j++) {
-                if (i == j) continue;
-
-                if (input.charAt(i) == input.charAt(j)) {
-                    System.err.println("The input contains doubles");
-                    return false;
-                }
-            }
-        }
-
-        return true;
-    }
-
-    /**
-     * Asking user for enter a name
-     *
-     * @param message is question for username
-     * @return in string type the user's answer as username
-     */
-    public String askUserName(String message) {
-
-        String regex = "^[a-zA-Z]+$";
-
-        String input;
-
-        do {
-            System.out.println(message);
-            input = scanner.nextLine();
-            if (!input.matches(regex)) {
-                System.err.println("Insert a valid name! ");
-            }
-        } while (!input.matches(regex));
-
-        return input.substring(0, 1).toUpperCase() + input.substring(1).toLowerCase();
-    }
-
-    public boolean askIsFiction(String s) {
-        if (s == null || s.length() < 1) return false;
-        System.out.println(s);
-        String answer;
-        do {
-            answer = scanner.nextLine().toLowerCase().trim();
-            System.out.println(answer);
-            System.out.println(answer.equals("yes"));
-            if (!answer.equals("yes") && !answer.equals("no")) System.err.println("Type in yes or no");
-        } while (!answer.equals("yes") && !answer.equals("no"));
-
-        return answer.equals("yes");
-    }
-
-    public Type askUserBookType(String s) {
-        System.out.println(s);
-        String answer = scanner.nextLine().toUpperCase();
-        Type type = null;
-        do {
-            switch (answer) {
-
-                case "ROMAN":
-                    type = ROMAN;
-                    break;
-                case "THRILLER":
-                    type = THRILLER;
-                    break;
-                case "FANTASY":
-                    type = FANTASY;
-                    break;
-                case "DETECTIVE":
-                    type = DETECTIVE;
-                    break;
-                default:
-                    System.err.println("Choose a valid type: Roman, Thriller, Detective, Fantasy");
-            }
-        } while (type == null);
-        return type;
-
-    }
-
-    public String askUserBooktitle(String s) {
-
-        return askUserName(s);
-    }
-
-    public String AskUserAuthor(String author) {
-
-        return askUserName(author);
-    }
-
-    public String AskUserIsbn(String s) {
-        String regex = "\\d{1,13}";
-
-        String input;
-
-        do {
-            System.out.println(s);
-            input = scanner.nextLine();
-            if (!input.matches(regex)) {
-                System.err.println("Insert a valid ISBN nr! ");
-            }
-        } while (!input.matches(regex));
-
-        return input;
-    }
-
-    public String AskUserRevision(String s) {
-        String regex = "\\d{1,4}";
-
-        String input;
-
-        do {
-            System.out.println(s);
-            input = scanner.nextLine();
-            if (!input.matches(regex)) {
-                System.err.println("Insert a valid ISBN nr! ");
-            }
-        } while (!input.matches(regex));
-
-        return input;
-    }
+   public
 }
-
-

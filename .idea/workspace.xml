@@ -20,15 +20,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0f191a40-edf6-4e45-a3f0-147cc82fedd6" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Notes.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Notes.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/be/koencorp/bookApp/BookApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/be/koencorp/bookApp/BookApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/be/koencorp/bookApp/model/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/be/koencorp/bookApp/model/Book.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/be/koencorp/bookApp/tools/ConsoleInputTool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/be/koencorp/bookApp/tools/ConsoleInputTool.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/be/koencorp/bookApp/tools/ConsolePrintTool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/be/koencorp/bookApp/tools/ConsolePrintTool.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/be/koencorp/bookApp/BookApp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/be/koencorp/bookApp/BookApp.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/be/koencorp/bookApp/model/Book.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/be/koencorp/bookApp/model/Book.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/be/koencorp/bookApp/tools/ConsoleInputTool.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/be/koencorp/bookApp/tools/ConsoleInputTool.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/be/koencorp/bookApp/tools/ConsolePrintTool.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/be/koencorp/bookApp/tools/ConsolePrintTool.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/be/koencorp/bookApp/dao/BookJpaDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/be/koencorp/bookApp/dao/BookJpaDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/be/koencorp/bookApp/tools/ConsoleInputTool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/be/koencorp/bookApp/tools/ConsoleInputTool2.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,15 +65,18 @@
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\JAVA\Hibernate\Tasks\Boekenworm-Simone\BookWurm-Simone" />
-    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="be.koencorp.bookApp" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\JAVA\Hibernate\Tasks\Boekenworm-Simone\BookWurm-Simone\src\main\java\be\koencorp\bookApp" />
       <recent name="D:\JAVA\Hibernate\Tasks\Boekenworm-Simone\BookWurm-Simone\src\main" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="be.koencorp.bookApp.tools" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\JAVA\Hibernate\Tasks\Boekenworm-Simone\BookWurm-Simone" />
     </key>
   </component>
   <component name="RunManager">
@@ -113,7 +113,8 @@
       <workItem from="1597923994182" duration="4653000" />
       <workItem from="1597941807650" duration="7250000" />
       <workItem from="1598106009602" duration="595000" />
-      <workItem from="1598164664001" duration="7630000" />
+      <workItem from="1598164664001" duration="8190000" />
+      <workItem from="1598185932595" duration="1964000" />
     </task>
     <servers />
   </component>
@@ -155,26 +156,26 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="463" y="65" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1598165272848" />
-    <state width="1323" height="387" key="GridCell.Tab.0.bottom" timestamp="1598176533356">
+    <state width="1323" height="244" key="GridCell.Tab.0.bottom" timestamp="1598177294466">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="1397" height="2" key="GridCell.Tab.0.bottom/0.0.1366.728/1366.-140.1440.860@1366.-140.1440.860" timestamp="1597922359850" />
-    <state width="1323" height="387" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1598176533356" />
-    <state width="1323" height="387" key="GridCell.Tab.0.center" timestamp="1598176533356">
+    <state width="1323" height="244" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1598177294466" />
+    <state width="1323" height="244" key="GridCell.Tab.0.center" timestamp="1598177294466">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="1397" height="2" key="GridCell.Tab.0.center/0.0.1366.728/1366.-140.1440.860@1366.-140.1440.860" timestamp="1597922359850" />
-    <state width="1323" height="387" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1598176533356" />
-    <state width="1323" height="387" key="GridCell.Tab.0.left" timestamp="1598176533356">
+    <state width="1323" height="244" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1598177294466" />
+    <state width="1323" height="244" key="GridCell.Tab.0.left" timestamp="1598177294466">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="1397" height="2" key="GridCell.Tab.0.left/0.0.1366.728/1366.-140.1440.860@1366.-140.1440.860" timestamp="1597922359850" />
-    <state width="1323" height="387" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1598176533356" />
-    <state width="1323" height="387" key="GridCell.Tab.0.right" timestamp="1598176533356">
+    <state width="1323" height="244" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1598177294466" />
+    <state width="1323" height="244" key="GridCell.Tab.0.right" timestamp="1598177294466">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="1397" height="2" key="GridCell.Tab.0.right/0.0.1366.728/1366.-140.1440.860@1366.-140.1440.860" timestamp="1597922359850" />
-    <state width="1323" height="387" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1598176533356" />
+    <state width="1323" height="244" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1598177294466" />
     <state x="348" y="68" key="NewModule_or_Project.wizard" timestamp="1598165277118">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

@@ -4,12 +4,10 @@ package be.koencorp.bookApp;
 import be.koencorp.bookApp.dao.BookJpaDao;
 import be.koencorp.bookApp.model.Book;
 import be.koencorp.bookApp.model.Type;
-import be.koencorp.bookApp.tools.ConsoleInputTool;
+import be.koencorp.bookApp.tools.ConsoleInputTool2;
 import be.koencorp.bookApp.tools.ConsolePrintTool;
 
 import javax.persistence.Persistence;
-
-import java.time.LocalDate;
 
 import static be.koencorp.bookApp.tools.ConsolePrintTool.printHeading;
 
@@ -17,7 +15,7 @@ import static be.koencorp.bookApp.tools.ConsolePrintTool.printHeading;
 public class BookApp {
 
     private static BookJpaDao bookJpaDao;
-    ConsoleInputTool consoleInput = new ConsoleInputTool();
+    ConsoleInputTool2 consoleInput = new ConsoleInputTool2();
 
     public static void main(String[] args) {
         var emf = Persistence.createEntityManagerFactory("bookpu");
@@ -99,6 +97,7 @@ public class BookApp {
     private void printMenu() {
         System.out.println("1. List all the books you want to read.");
         System.out.println("2. List all the books you have already read.");
+        System.out.println("3. List all the books read sorted .");
         System.out.println("3. Add a book to the list.");
         System.out.println("4. Archive a book.");
         System.out.println("5. Exit the app.");

@@ -13,13 +13,13 @@ public class BookJpaDao extends AbstractJpaDao<Book, UUID> {
     }
 
     public List<Book> findAllOrderByTitle() {
-        TypedQuery<Book> query = em.createQuery("SELECT e FROM Book e WHERE e.date is null order by e.title", entityClass);
+        TypedQuery<Book> query = em.createQuery("SELECT e FROM Book e WHERE e.date IS NULL ORDER BY e.title", entityClass);
         return query.getResultList();
     }
 
 
-    public List<Book> findAllByAuthorOrderByName(String author) {
-        TypedQuery<Book> query = em.createQuery("SELECT e FROM Book e WHERE e.author=?1 and e.date is null order by e.author", entityClass);
+    public List<Book> findAllByOrderByAuthorandName(String author) {
+        TypedQuery<Book> query = em.createQuery("SELECT e FROM Book e  WHERE e.date IS NULL ORDER BY e.author,e.title", entityClass);
         return query.getResultList();
     }
 
@@ -27,6 +27,12 @@ public class BookJpaDao extends AbstractJpaDao<Book, UUID> {
         TypedQuery<Book> query = em.createQuery("SELECT e FROM Book e WHERE e.date is not null order by e.date", entityClass);
         return query.getResultList();
     }
+
+    public List<Book> findAllArchiveOrderByTitle() {
+        TypedQuery<Book> query = em.createQuery("SELECT e FROM Book e WHERE e.date IS NOT NULL ORDER BY e.title", entityClass);
+        return query.getResultList();
+    }
+
 
 
 }

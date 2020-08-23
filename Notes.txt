@@ -1,0 +1,9 @@
+In Book
+
+@Colums: geeft veld weer in database. Heeft veel opties e.g Nullable (geeft weer of null mag zijn) enz.
+Deze annotatie heeft nog heel wat andere mogelijkheden. UUID, primary key is altijd uniek. 32 bit gegenerereerde sleutel.
+Handig want moeilijk te hakken! Toestencombo's ctr o (control organize imports !). Conventies: packages altijd met kleine
+letters ! variabelen nooit -. Naam velden tabel ook kleine letters en scheiding met underscore! Validatie hier niet gedaan
+moet in app gezet worden !
+    
+
