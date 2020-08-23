@@ -1,106 +1,117 @@
 package be.koencorp.bookApp;
 
-
 import be.koencorp.bookApp.dao.BookJpaDao;
 import be.koencorp.bookApp.model.Book;
 import be.koencorp.bookApp.model.Type;
-import be.koencorp.bookApp.tools.ConsoleInputTool2;
+import be.koencorp.bookApp.tools.ConsoleInputTool;
 import be.koencorp.bookApp.tools.ConsolePrintTool;
-
+import java.time.LocalDate;
+import java.util.Optional;
+import java.util.UUID;
 import javax.persistence.Persistence;
-
-import static be.koencorp.bookApp.tools.ConsolePrintTool.printHeading;
-
 
 public class BookApp {
 
-    private static BookJpaDao bookJpaDao;
-    ConsoleInputTool2 consoleInput = new ConsoleInputTool2();
+  private BookJpaDao bookJpaDao;
+  private ConsoleInputTool consoleInputTool;
 
-    public static void main(String[] args) {
-        var emf = Persistence.createEntityManagerFactory("bookpu");
-        var em = emf.createEntityManager();
-//        Book book01 = new Book("a", "b", "111111113", "22222", Type.ROMAN, true, null);
-        bookJpaDao = new BookJpaDao(em);
-//        bookJpaDao.create(book01);
+  public BookApp(BookJpaDao bookJpaDao) {
+    this.bookJpaDao = bookJpaDao;
+    this.consoleInputTool = new ConsoleInputTool();
+  }
 
-        BookApp app = new BookApp();
-        app.startMenu();
+  public static void main(String[] args) {
+    var emf = Persistence.createEntityManagerFactory("bookpu");
+    var em = emf.createEntityManager();
 
-    }
+    var consoleInputTool = new ConsoleInputTool();
+    var bookJpaDao = new BookJpaDao(em);
 
+    new BookApp(bookJpaDao).startMenu();
+  }
 
-//   public void fillDatabase() {
-//        Book book_01 = new Book("Tiny gaat op reis", " Gilbert Delahaye", Status.UNASSIGNED);
-//        Book book_02 = new Book("Tiny krijgt een gasboete", " Gilbert Delahaye", Status.UNASSIGNED);
-//        Book book_03 = new Book("Tiny liet een windje in de tent", " Gilbert Delahaye", Status.UNASSIGNED);
-//        Book book_04 = new Book("Tiny doet kaka in de tuin", " Gilbert Delahaye", Status.UNASSIGNED);
-//        Book book_05 = new Book("Tiny is op vakantie", " Gilbert Delahaye", Status.UNASSIGNED);
-//
-//        dao.save(book_01);
-//        dao.save(book_02);
-//        dao.save(book_03);
-//        dao.save(book_04);
-//        dao.save(book_05);
-//
-//
-//    }
+  public void startMenu() {
+    int choice;
+    do {
+      System.out.println(
+          "Hello " + ConsolePrintTool.ANSI_YELLOW + "Simone" + ConsolePrintTool.ANSI_RESET
+              + "!"
+              + " Hope you are having a good day! Welcome to the BookApp starting menu. " +
+              "Please choose one of the following options: ");
 
-    public void startMenu() {
-        int choice;
-        do {
-            System.out.println("Hello " + ConsolePrintTool.ANSI_YELLOW + "Simone" + ConsolePrintTool.ANSI_RESET + "!" + " Hope you are having a good day! Welcome to the BookApp starting menu. " +
-                    "Please choose one of the following options: ");
+      printMenu();
+      choice = consoleInputTool.askUserInteger("Your choice: ", 1, 9);
 
-            printMenu();
+      switch (choice) {
+        case 1:
+          bookJpaDao.findAllOrderByTitle().forEach(System.out::println);
+          break;
+        case 2:
+          bookJpaDao.findAllReadOrderedByDate().forEach(System.out::println);
+          break;
+        case 3:
+          bookJpaDao.findAllByOrderByAuthorAndName().forEach(System.out::println);
+          break;
+        case 4:
+          bookJpaDao.findAllArchiveOrderByTitle().forEach(System.out::println);
+          break;
+        case 5:
 
-            choice = consoleInput.askUserPosIntBetweenRange("Input a number between 1 and 5.", 1, 5);
+          break;
+        case 6:
+          UUID id = consoleInputTool.askUserUuid("Give book id: ");
+          Optional<Book> bookOpt = bookJpaDao.findById(id);
+          bookOpt.ifPresentOrElse(this::updateBook,
+              () -> System.err.println("Unable to find book with id '" + id + "'"));
 
-            if (choice == 1) {
+      }
+    } while (choice != 7);
+  }
 
-                printHeading();
-                bookJpaDao.findAllOrderByTitle().forEach(System.out::println);
+  private void updateBook(Book book) {
+    book.setDate(LocalDate.now());
+    bookJpaDao.update(book);
+  }
 
-                ConsolePrintTool.printEnter();
+  private void addBooks(BookJpaDao bookJpaDao) {
+    bookJpaDao.create(
+        new Book("Tiny gaat op reis", "Koen Wauters", "97884933171", "1", Type.DETECTIVE, true,
+            null));
+    bookJpaDao.create(
+        new Book("Koen gaat op reis", "Britney Bitch", "97884933172", "1", Type.DETECTIVE, true,
+            null));
+    bookJpaDao.create(
+        new Book("Tom gaat op reis", "Gilbert Delahaye", "97884933173", "1", Type.ROMAN, true,
+            null));
+    bookJpaDao.create(
+        new Book("Ward gaat op reis", "Kabouter Joren", "97884933174", "1", Type.ROMAN, false,
+            null));
+    bookJpaDao.create(
+        new Book("Kenny gaat op reis", "Maarten Ezel Vangerven", "97884933175", "1", Type.FANTASY,
+            false, null));
+    bookJpaDao.create(
+        new Book("Jan gaat op reis", "Tom Bombadile", "97884933176", "1", Type.FANTASY, false,
+            null));
+    bookJpaDao.create(
+        new Book("Pelin gaat op reis", "Tiny Maarschalk", "97884933177", "1", Type.THRILLER, true,
+            LocalDate.of(2020, 1, 1)));
+    bookJpaDao.create(
+        new Book("Memhet gaat op reis", "Pieter Smets", "97884933178", "1", Type.THRILLER, true,
+            LocalDate.of(2019, 1, 1)));
+    bookJpaDao.create(
+        new Book("Albert gaat op reis", "Koen Vochten", "97884933179", "1", Type.THRILLER, true,
+            LocalDate.of(2018, 1, 1)));
+  }
 
-            }
-
-            if (choice == 2) {
-                printHeading();
-                bookJpaDao.findAllReadOrderedByDate().forEach(System.out::println);
-                ConsolePrintTool.printEnter();
-            }
-            if (choice == 3) {
-                String title = consoleInput.askUserBooktitle("Book title: ");
-                String author = consoleInput.AskUserAuthor("Author: ");
-                String isbn = consoleInput.AskUserIsbn("ISBN: ");
-                String revision = consoleInput.AskUserRevision("Revision: ");
-                boolean fiction = consoleInput.askIsFiction("Is the book Fiction (yes/no)?");
-                Type type = consoleInput.askUserBookType("Type of the book: ");
-
-                Book book = new Book(title, author, isbn, revision,
-                        type, fiction, null);
-
-                bookJpaDao.create(book);
-
-                ConsolePrintTool.printEnter();
-            }
-
-            if (choice == 4) {
-
-            }
-
-        }
-        while (choice != 5);
-    }
-
-    private void printMenu() {
-        System.out.println("1. List all the books you want to read.");
-        System.out.println("2. List all the books you have already read.");
-        System.out.println("3. List all the books read sorted .");
-        System.out.println("3. Add a book to the list.");
-        System.out.println("4. Archive a book.");
-        System.out.println("5. Exit the app.");
-        ConsolePrintTool.printEnter();
-    }
+  private void printMenu() {
+    System.out.println("1. List all the books you want to read ordered by title.");
+    System.out
+        .println("2. List all the books you want to read ordered by Author and then by name.");
+    System.out.println("3. List all the books you have already read ordered by date.");
+    System.out.println("4. List all the books you have already read ordered by title.");
+    System.out.println("5. Add a book to the list.");
+    System.out.println("6. Archive a book.");
+    System.out.println("7. Exit the app.");
+    ConsolePrintTool.printEnter();
+  }
 }

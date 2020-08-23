@@ -5,11 +5,8 @@ import java.time.LocalDate;
 import java.util.UUID;
 
 @Entity
-@Table(name = "Books2")
+@Table(name = "book")
 public class Book {
-    public Book() {
-    }
-
 
     @Id
     @Column(name = "id", updatable = false)
@@ -36,6 +33,9 @@ public class Book {
 
     @Column(name = "date_read")
     private LocalDate date;
+
+    public Book() {
+    }
 
     public Book(String title, String author, String isbn, String revision,
                 Type type, boolean fiction, LocalDate date) {
@@ -115,11 +115,16 @@ public class Book {
 
     @Override
     public String toString() {
-
-        return String.format("%15s |%20s|%14s|%7s|%10s|%5s",
-                title, author, isbn, revision, type, fiction);
+        return "Book{" +
+            "id=" + id +
+            ", title='" + title + '\'' +
+            ", author='" + author + '\'' +
+            ", isbn='" + isbn + '\'' +
+            ", revision='" + revision + '\'' +
+            ", type=" + type +
+            ", fiction=" + fiction +
+            ", date=" + date +
+            '}';
     }
-
-
 }
 

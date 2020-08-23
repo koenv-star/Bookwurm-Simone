@@ -2,6 +2,7 @@ package be.koencorp.bookApp.dao;
 
 import be.koencorp.bookApp.model.Book;
 
+import java.util.Optional;
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
 import java.util.List;
@@ -17,8 +18,7 @@ public class BookJpaDao extends AbstractJpaDao<Book, UUID> {
         return query.getResultList();
     }
 
-
-    public List<Book> findAllByOrderByAuthorandName(String author) {
+    public List<Book> findAllByOrderByAuthorAndName() {
         TypedQuery<Book> query = em.createQuery("SELECT e FROM Book e  WHERE e.date IS NULL ORDER BY e.author,e.title", entityClass);
         return query.getResultList();
     }
@@ -32,7 +32,4 @@ public class BookJpaDao extends AbstractJpaDao<Book, UUID> {
         TypedQuery<Book> query = em.createQuery("SELECT e FROM Book e WHERE e.date IS NOT NULL ORDER BY e.title", entityClass);
         return query.getResultList();
     }
-
-
-
 }

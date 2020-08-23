@@ -17,7 +17,6 @@ public abstract class AbstractJpaDao<T, ID> implements JpaDao<T, ID> {
         this.entityClass = entityClass;
     }
 
-
     @Override
     public Optional<T> findById(ID id) {
         return Optional.ofNullable(em.find(entityClass, id));

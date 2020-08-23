@@ -1,6 +1,7 @@
 package be.koencorp.bookApp.tools;
 
 import java.text.SimpleDateFormat;
+import java.util.List;
 import java.util.TimeZone;
 
 /**
@@ -26,12 +27,10 @@ public final class ConsolePrintTool {
         printTitle(title, '-');
     }
 
-
     public static String formatTime(long millis) {
         SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss");
         sdf.setTimeZone(TimeZone.getTimeZone("UTC"));
         return sdf.format(millis);
-
     }
 
     public static void printHeading() {
